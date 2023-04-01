@@ -3,11 +3,14 @@
   <h1>{{ .Title }}</h1>
   {{ range .Params.sections }}
     <h2>{{ .title }}</h2>
+    <div class="columns is-multiline">
     {{ range .images }}
-      <div>
+    <div class="column is-one-third">
+        <figure class="image"></figure>
         <img src="{{ .image | absURL }}" alt="{{ .caption }}">
-        <p>{{ .caption }}</p>
+    </figure>
       </div>
     {{ end }}
+</div>
   {{ end }}
 {{ partial "footer.html" . }}
