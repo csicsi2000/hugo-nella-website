@@ -1,7 +1,7 @@
 ---
 title: First Gallery
 description: dasfsadfasdf
-layout: gallery
+type: gallery
 sections:
   - title: Animals
     images:

@@ -55,7 +55,6 @@ collections:
       - file: "content/gallery/index.md"
         label: "Gallery"
         name: "gallery"
-        media_folder: ""
         public_folder: ""
         create: true
         fields:
