@@ -4,9 +4,9 @@ backend:
 media_folder: "static/images" # Folder where user uploaded files should go
 public_folder: "images"
 collections:
-  - name: "posts" # Used in routes, e.g., /admin/collections/post
-    label: "Posts" # Used in the UI
-    folder: "content/posts" # The path to the folder where the documents are stored
+  - name: "concerts" # Used in routes, e.g., /admin/collections/post
+    label: "Concerts" # Used in the UI
+    folder: "content/concerts" # The path to the folder where the documents are stored
     path: "{{slug}}/index"
     media_folder: "" # Save images in the post's own folder instead of the static folder
     public_folder: ""
@@ -15,6 +15,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Location", name: "location", widget: "map" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
@@ -32,7 +33,7 @@ collections:
               fields:
                 [
                   { label: "Heading", name: "heading", widget: string },
-                  { label: "Text", name: "text", widget: "text" },
+                  { label: "Text", name: "text", widget: "markdown" },
                 ],
             }
       - file: "content/about/index.md"
@@ -41,3 +42,9 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "text" }
+      - file: "content/contact/index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

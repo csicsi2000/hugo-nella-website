@@ -1,14 +1,23 @@
 <header class="site-header">
-  <nav class="site-nav">
-    <a class="logo" href="/">
-      {{ .Site.Title }}
-    </a>
-    <ul class="main-menu">
+  <nav class="navbar main-theme-color" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        {{ .Site.Title }}
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarElement">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarElement" class="navbar-menu">
+      <div class="navbar-start">
       {{ range.Site.Menus.main }}
-      <li>
-        <a href="{{ .URL }}">{{ .Name }}</a>
-      </li>
+        <a href="{{ .URL }}" class="navbar-item">{{ .Name }}</a>
       {{ end }}
-    </ul>
+      </div>
+    </div>
   </nav>
 </header>
+
