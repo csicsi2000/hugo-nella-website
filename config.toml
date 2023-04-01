@@ -2,19 +2,25 @@ title = "Nella Balog"
 
 [menu]
   [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts"
-    weight = 10
-
-  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "concerts"
+    name = "Concerts"
+    url = "/concerts"
     weight = 20
+  
+  [[menu.main]]
+    identifier = "gallery"
+    name = "Gallery"
+    url = "/gallery"
+    weight = 30
 
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contact"
-    weight = 20
+    weight = 40

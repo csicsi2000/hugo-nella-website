@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ range .Params.sections }}
+    <h2>{{ .title }}</h2>
+    {{ range .images }}
+      <div>
+        <img src="{{ .image | absURL }}" alt="{{ .caption }}">
+        <p>{{ .caption }}</p>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}
