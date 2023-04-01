@@ -39,12 +39,16 @@ collections:
       - file: "content/about/index.md"
         label: "About"
         name: "about"
+        media_folder: ""
+        public_folder: ""
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "content/contact/index.md"
         label: "Contact"
         name: "contact"
+        media_folder: ""
+        public_folder: ""
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
