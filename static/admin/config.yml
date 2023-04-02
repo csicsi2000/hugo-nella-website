@@ -15,7 +15,6 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
-      - { label: "Location", name: "location", widget: "map" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
@@ -61,7 +60,7 @@ collections:
           - { name: 'title', label: 'Title', widget: 'string' }
           - { name: 'description', label: 'Description', widget: 'text' }
           # Layout is needed
-          - { name: layout, label: layout, widget: "hidden", default: "gallery"}
+          - { name: type, label: type, widget: "hidden", default: "gallery"}
           - { name: 'sections', label: 'Sections', widget: 'list', fields: [
               { name: 'title', label: 'Title', widget: 'string' },
               { name: 'images', label: 'Images', widget: 'list', fields: [

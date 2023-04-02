@@ -4,7 +4,9 @@
 
   {{ .Content }}
   
-{{ range.Data.Pages }}
+  {{ $concerts := where .Site.Pages "Type" "concerts" }}
+  {{ $sorted := sort $concerts ".Params.Date" }}
+  {{ range $sorted }}
     <article class="post-snippet">
       <h3>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
