@@ -18,6 +18,8 @@ collections:
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Features description", name: "description", widget: "text" }
+      - { label: "Categories", name: "categories", widget: "list"}
+      - { label: "Tags", name: "tags", widget: "list"}
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
