@@ -4,10 +4,12 @@
     --body-background:  #ffd09e;
     --accent-color-text: #34495e;
     --body-text-color: #34495e;
+    --card-background: #fef9f4;
+    --card-text-color-tertiary: #818181;
 }
 
 .menu{
     background-color: var(--body-background);
-    filter: brightness(105%);
+    //filter: brightness(105%);
     box-shadow:  40 black;
 }
