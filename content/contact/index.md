@@ -1,5 +1,6 @@
 ---
 title: Contact form
+type: contact
 ---
 H﻿ello 
 
