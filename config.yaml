@@ -1,31 +1,6 @@
 title: Nella Balog
 theme: stack
-menu:
-  main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: 1
-    - identifier: about
-      name: About
-      url: /about
-      weight: 10
-    - identifier: concerts
-      name: Concerts
-      url: /concerts
-      weight: 20
-    - identifier: gallery
-      name: Gallery
-      url: /gallery
-      weight: 30
-    - identifier: contact
-      name: Contact
-      url: /contact
-      weight: 40
-    - identifier: search
-      name: Search
-      url: /search
-      weight: 40
+
 
 paginate: 10
 languages:
