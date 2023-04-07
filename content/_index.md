@@ -1,7 +1,6 @@
 ---
-title: "Hi There"
+title: Home
 menu:
-    main:
-        name: Home
-        weight: -100
+  main:
+    weight: -100
 ---

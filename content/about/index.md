@@ -1,5 +1,6 @@
 ---
 title: "About"
+readingTime: false
 menu:
     main: 
         weight: -20

@@ -1,6 +1,10 @@
 @import "haikei-svg.css";
 
 /* Basic settings */
+.menu{
+  transition: 0.3s;
+}
+
 :root {
   --primary: #ffd09e;
 }
@@ -9,9 +13,7 @@ html {
   overflow-y:scroll;
 }
 
-.main-theme-color{
-  background-color: #ffd09e;
-}
+/*
 
 @media only screen and (max-width: 1000px) {
   .navbar-menu {
@@ -35,6 +37,7 @@ html {
       pointer-events: auto;
   }
 }
+ */
 
 /* Curves at the bottom */
 /* Curved bg with plain CSS */

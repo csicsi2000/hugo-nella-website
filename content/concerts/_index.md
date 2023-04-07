@@ -1,6 +1,6 @@
 ---
 title: "Concerts"
-type: "blog"
+type: "featuredList"
 menu:
     main: 
         weight: -90
