@@ -5,8 +5,7 @@ location: Budapest
 image: problem1.png
 description: Koncertek
 categories:
-  - Second tag
-  - Test
+  - Második
 tags:
   - Magyarország
 ---
