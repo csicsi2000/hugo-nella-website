@@ -2,6 +2,11 @@ backend:
   name: git-gateway
   branch: main
 local_backend: true
+i18n:
+  structure: multiple_files
+  locales: [en, hu]
+  default_locale: en
+
 media_folder: "static/images" # Folder where user uploaded files should go
 public_folder: "images"
 collections:
@@ -13,29 +18,6 @@ collections:
         name: "home"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Blurb", name: "blurb", widget: "text", required: false }
-          - {
-              label: "menu",
-              name: "menu",
-              widget: "hidden",
-              fields:
-                [
-                  {
-                    label: "main",
-                    name: "main",
-                    widget: "hidden",
-                    fields:
-                      [
-                        {
-                          label: "weight",
-                          name: "weight",
-                          widget: "hidden",
-                          default: "-100",
-                        },
-                      ],
-                  },
-                ],
-            }
       - file: "content/about/index.md"
         label: "About"
         name: "about"
@@ -88,25 +70,24 @@ collections:
     path: "{{slug}}/index"
     media_folder: "" # Save images in the post's own folder instead of the static folder
     public_folder: ""
+    i18n: true 
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in front matter
       - {
           label: "Save as Draft",
-          name: "draft",
-          required: false,
-          widget: “boolean”,
-          default: true,
+          name: "draft", widget: "boolean",
+          default: true, i18n: true, required: false 
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Concert date", name: "date", widget: "datetime" }
-      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", i18n: true  }
+      - { label: "Concert date", name: "date", widget: "datetime", date_format: "DD.MM.YYYY", i18n: true  }
+      - { label: "Location", name: "location", widget: "string",  i18n: duplicate  }
       - {
           label: "Featured Image",
           name: "image",
           widget: "image",
-          required: false,
+          required: false, i18n: duplicate 
         }
-      - { label: "Features description", name: "description", widget: "text" }
+      - { label: "Features description", name: "description", widget: "text", i18n: true  }
       - {
           label: "Categories",
           name: "categories",
@@ -115,25 +96,53 @@ collections:
           search_fields: ["title"],
           value_field: "title",
           display_fields: ["title"],
-          required: false,
+          required: false,  i18n: true,multiple: true
         }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { 
+          label: "Tags", 
+          name: "tags", 
+          widget: "relation",
+          collection: "tags",
+          search_fields: ["title"],
+          value_field: "title",
+          display_fields: ["title"],
+          required: false, i18n: true, multiple: true}
+      - { label: "Body", name: "body", widget: "markdown" , i18n: true}
   - name: "categories" # Used in routes, e.g., /admin/collections/post
     label: "EN-Categories" # Used in the UI
     folder: "content/categories" # The path to the folder where the documents are stored
     path: "{{slug}}/_index"
     create: true # Allow users to create new documents in this collection
+    i18n: true 
     fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Title", name: "title", widget: "string",i18n: true  }
+      - { label: "Description", name: "description", widget: "text", i18n: true }
       - {
           label: "Style",
           name: "style",
           widget: "object",
           fields:
             [
-              { name: "Background", label: "background", widget: "color" },
-              { name: "Color", label: "color", widget: "color" },
+              { name: "Background", label: "background", widget: "color",required: false,i18n: duplicate },
+              { name: "Color", label: "color", widget: "color",required: false,i18n: duplicate },
+            ],
+        }
+  - name: "tags" # Used in routes, e.g., /admin/collections/post
+    label: "Tags" # Used in the UI
+    folder: "content/tags" # The path to the folder where the documents are stored
+    path: "{{slug}}/_index"
+    create: true # Allow users to create new documents in this collection
+    i18n: true 
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Description", name: "description", widget: "text", i18n: true }
+      - {
+          label: "Style",
+          name: "style",
+          widget: "object",
+          fields:
+            [
+              { name: "Background", label: "background", widget: "color" ,required: false,i18n: duplicate},
+              { name: "Color", label: "color", widget: "color",required: false,i18n: duplicate},
             ],
         }

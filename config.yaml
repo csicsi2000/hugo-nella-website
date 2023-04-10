@@ -19,7 +19,7 @@ params:
         - concerts
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: images/logo.png
 
     footer:
         since: 2022
