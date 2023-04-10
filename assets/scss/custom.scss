@@ -2,7 +2,7 @@
 
 :root{
     --body-background:  #ffd09e;
-    --accent-color-text: #34495e;
+    --accent-color-text: #ffffff;
     --body-text-color: #34495e;
     --card-background: #fef9f4;
     --card-text-color-tertiary: #818181;
@@ -12,3 +12,33 @@
     background-color: var(--body-background);
     transition: 0.3s;
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-gap: 10px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  
+  .gallery > div {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gallery img {
+    display: block;
+    object-fit: cover;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    transition: transform .3s ease-in-out;
+  }

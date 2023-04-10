@@ -1,6 +1,9 @@
 ---
-title: Contact form
+title: Contact
 type: contact
+menu:
+    main: 
+        weight: -60
 ---
 H﻿ello 
 

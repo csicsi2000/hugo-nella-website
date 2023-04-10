@@ -1,7 +1,11 @@
 ---
-title: First Gallery
+title: Galéria
 description: dasfsadfasdf
-type: gallery
+type: galler
+readingTime: false
+menu:
+    main: 
+        weight: -70
 sections:
   - title: Animals
     images:

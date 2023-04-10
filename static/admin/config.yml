@@ -13,12 +13,12 @@ collections:
   - name: "pages"
     label: "EN-Pages"
     files:
-      - file: "content/index.md"
+      - file: "content/index.en.md"
         label: "Home Page"
         name: "home"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-      - file: "content/about/index.md"
+      - file: "content/about/index.en.md"
         label: "About"
         name: "about"
         media_folder: ""
@@ -26,7 +26,7 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "content/contact/index.md"
+      - file: "content/contact/index.en.md"
         label: "Contact"
         name: "contact"
         media_folder: ""
@@ -35,7 +35,7 @@ collections:
           - { name: type, label: type, widget: "hidden", default: "contact" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "content/gallery/index.md"
+      - file: "content/gallery/index.en.md"
         label: "Gallery"
         name: "gallery"
         public_folder: ""
@@ -43,29 +43,10 @@ collections:
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "description", label: "Description", widget: "text" }
-          # Layout is needed
-          - { name: type, label: type, widget: "hidden", default: "gallery" }
-          - {
-              name: "sections",
-              label: "Sections",
-              widget: "list",
-              fields:
-                [
-                  { name: "title", label: "Title", widget: "string" },
-                  {
-                    name: "images",
-                    label: "Images",
-                    widget: "list",
-                    fields:
-                      [
-                        { name: "image", label: "Image", widget: "image" },
-                        { name: "caption", label: "Caption", widget: "string" },
-                      ],
-                  },
-                ],
-            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "concerts" # Used in routes, e.g., /admin/collections/post
-    label: "EN-Concerts" # Used in the UI
+    label: "Concerts" # Used in the UI
     folder: "content/concerts" # The path to the folder where the documents are stored
     path: "{{slug}}/index"
     media_folder: "" # Save images in the post's own folder instead of the static folder
@@ -109,7 +90,7 @@ collections:
           required: false, i18n: true, multiple: true}
       - { label: "Body", name: "body", widget: "markdown" , i18n: true}
   - name: "categories" # Used in routes, e.g., /admin/collections/post
-    label: "EN-Categories" # Used in the UI
+    label: "Categories" # Used in the UI
     folder: "content/categories" # The path to the folder where the documents are stored
     path: "{{slug}}/_index"
     create: true # Allow users to create new documents in this collection
